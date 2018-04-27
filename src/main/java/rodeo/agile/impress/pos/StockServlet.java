@@ -26,7 +26,9 @@ public class StockServlet extends HttpServlet {
         int num = 0;
         try {
         	price = Integer.parseInt(priceString);
-        	num = Integer.parseInt(numString);
+        	if (numString != "") {
+        		num = Integer.parseInt(numString);
+        	}
 
         	String dbPath = getServletContext().getRealPath("WEB-INF/pos.db");
         	StockDao dao = new StockDao(dbPath);
@@ -42,7 +44,7 @@ public class StockServlet extends HttpServlet {
             request.getRequestDispatcher("jsp/stocks/input.jsp").forward(request, response);
             return;
         }
-        
+
         request.getRequestDispatcher("jsp/stocks/success.jsp").forward(request, response);
     }
 
