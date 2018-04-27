@@ -25,7 +25,7 @@ public class StockServlet extends HttpServlet {
         int price = 0;
         int num = 0;
         try {
-        	price = Integer.parseInt(priceString);
+        	price = Integer.parseInt(priceString.trim());
         	if (numString != "" && numString != null) {
         		num = Integer.parseInt(numString);
         	}
