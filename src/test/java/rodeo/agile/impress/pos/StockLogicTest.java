@@ -33,15 +33,6 @@ public class StockLogicTest {
 		verify(dao, times(1)).insert("ValidName", 0, 0);
 	}
 
-	@Test (expected=RuntimeException.class)
-	public void testUpdateMethodShouldBeCalledIfNameAlreadyExists() throws ClassNotFoundException, SQLException {
-
-
-
-		verify(dao, times(1)).update("ValidName", 0, 0);
-	}
-
-
 	@Test
 	public void testUpdateMethodShouldBeCalledIfValuesAreValid() throws ClassNotFoundException, SQLException {
 		stockLogic.update("ValidName", 50, 100);
